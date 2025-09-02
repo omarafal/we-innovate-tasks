@@ -9,16 +9,16 @@ def rand_mac():
     for _ in range(0, 5):
         final_addr += f":{randint(0, 255):02X}"
 
-    return f"{final_addr}"
+    return final_addr
 
 def main(intf):
     try:
         with open(f"/sys/class/net/{intf}/address") as file:
             org = file.read().strip()
 
-            # store in temp file just in case
-            with open("./spoof.tmp", "w") as y_file:
-                y_file.write(org)
+        # store in temp file just in case
+        with open("./spoof.tmp", "w") as file:
+            file.write(org)
     except:
         print("This is not a valid interface.\n")
         sys.exit(1)
