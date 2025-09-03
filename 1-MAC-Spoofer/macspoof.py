@@ -32,8 +32,8 @@ def main(intf):
             os.system(f"sudo ip link set dev {intf} up")
 
             print("\nMAC address changed.\n")
-            print(f"Running: ip link show {intf}")
-            os.system(f"ip link show {intf}")
+            print(f"Running: ip link show {intf}\n")
+            os.system(f"ip link show {intf}\n")
             time.sleep(60*3)
 
     except KeyboardInterrupt:
